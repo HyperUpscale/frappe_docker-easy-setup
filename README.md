@@ -3,32 +3,50 @@
 
 Everything about [Frappe](https://github.com/frappe/frappe) and [ERPNext](https://github.com/frappe/erpnext) in containers.
 
-# Getting Started - the following commands work on UBUNTU.
+# HOW TO INSTALL, SETUP AND RUN THE FRAPPE (ERPnext) DOCKER IMAGE - the following commands work on UBUNTU.
+..................................................................
+These are the commands that should work on a clean WSL Ubuntu.
+..................................................................
+
+↓
+
+**sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y**
+
+↓
+
+**curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null**
+
+↓
+
+**sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y**
+
+↓
+
+**sudo usermod -aG docker ${USER} && newgrp docker**
+
+↓
+
+**sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose**
+
+↓
+
+**sudo chmod +x /usr/local/bin/docker-compose**
+
+↓
+
+**mkdir erpnext_docker && cd erpnext_docker**
+
+↓
+
+**docker compose -p pwd -f docker-compose.yml up**
 
 
-sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
-
-sudo usermod -aG docker ${USER} && newgrp docker
-
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-mkdir erpnext_docker && cd erpnext_docker
 
 
 
-
-
-
-
-
-
-
-Once completed, chose one of the following two sections for next steps.
+..................................................................
+Once completed, you should be able to open the web UI on port 8088.
+..................................................................
 
 ### Try in Play With Docker
 
