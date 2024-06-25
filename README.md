@@ -38,6 +38,12 @@ These are the commands that should work on a clean WSL Ubuntu.
 
 ↓
 
+Them download ONLY  the docker-compose.yml file
+
+**wget https://github.com/HyperUpscale/frappe_docker-easy-setup/blob/main/docker-compose.yml**
+
+↓
+
 **docker compose -p pwd -f docker-compose.yml up**
 
 
