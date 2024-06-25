@@ -3,9 +3,30 @@
 
 Everything about [Frappe](https://github.com/frappe/frappe) and [ERPNext](https://github.com/frappe/erpnext) in containers.
 
-# Getting Started
+# Getting Started - the following commands work on UBUNTU.
 
-To get started you need [Docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/), and [git](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git) setup on your machine. For Docker basics and best practices refer to Docker's [documentation](http://docs.docker.com).
+
+sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
+
+sudo usermod -aG docker ${USER} && newgrp docker
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+mkdir erpnext_docker && cd erpnext_docker
+
+
+
+
+
+
+
+
+
 
 Once completed, chose one of the following two sections for next steps.
 
